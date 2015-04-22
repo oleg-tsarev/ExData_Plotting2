@@ -7,45 +7,16 @@ NEI <- readRDS("./data/summarySCC_PM25.rds")
 SCC <- readRDS("./data/Source_Classification_Code.rds")
 
 # === processing ===#
-aggr <- aggregate(NEI$Emissions,by=list(NEI$year),FUN=sum,na.rm=T)
-aggr$x <- aggr$x/1000000
+aggr1 <- aggregate(NEI$Emissions,by=list(NEI$year),FUN=sum,na.rm=T)
+aggr1$x <- aggr1$x/1000000
 
-plot(aggr$Group.1,aggr$x,type="l",xlab = "Year",
-     ,ylab = "PM25 Emissions, mln tonns")
+# === plot ===#
+plot(aggr1$Group.1,aggr1$x,type="o",xlab = "Year",
+     ,ylab = "PM25 Emissions, 'Mln tonns"
+     ,main="Emissions in U.S.")
 
-
-aggr
-
-
-grDevices
-
-
-
-library(RColorBrewer)
-cols <- brewer.pal(3,"BuGn")
-cols
-pal <- colorRampPalette(cols)
-image(volcano,col=pal(20))
+# === write to file === #
+dev.copy(png, file = "plot1.png",width=480,height=480)
+dev.off()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-write.csv(NEI, "./data/summarySCC_PM25.csv", row.names=T)
-
-write.csv(SCC, "./data/Source_Classification_Code.csv", row.names=T)
