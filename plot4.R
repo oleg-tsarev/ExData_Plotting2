@@ -16,8 +16,8 @@ aggr4$Emissions <- aggr4$Emissions/1000
 
 # === plot ===#
 qplot(Year,Emissions,data=aggr4,geom=c("point","line")
-      ,xlab = "Year",ylab = "PM25 Emissions,'K tonns"
-      ,main="Emissions from Coal Combustion-Related Sources")
+      ,xlab = "Year",ylab = "PM25 Emissions,'Ths tons"
+      ,main="PM25 Emissions from Coal Combustion Related Sources")
 
 # === write to file === #
 dev.copy(png, file = "plot4.png",width=480,height=480)

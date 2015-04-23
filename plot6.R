@@ -15,9 +15,10 @@ names(aggr6) <- c("Year","City","Emissions")
 aggr6$City <- ifelse(aggr6$City=="24510","Baltimore City","Los Angeles County")
 
 # === plot ===#
-qplot(Year,Emissions,data=aggr6,geom=c("point","line"),group=City,color=City
-      ,xlab = "Year",ylab = "PM25 Emissions, tonns"
-      ,main="Comparison of Emissions in Baltimore and LA")
+qplot(Year,Emissions,data=aggr6,group=City,color=City
+      ,xlab = "Year",ylab = "PM25 Emissions, tons"
+      ,geom=c("line","smooth"),method="lm"
+      ,main="PM25 Emissions from Motor Vehicle in Baltimore and LA")
 
 # === write to file === #
 dev.copy(png, file = "plot6.png",width=480,height=480)

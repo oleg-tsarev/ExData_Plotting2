@@ -14,8 +14,8 @@ names(aggr3) <- c("Type","Year","Emissions")
 
 # === plot ===#
 qplot(Year,Emissions,data=aggr3,geom=c("point","line"),group=Type,color=Type
-      ,xlab = "Year",ylab = "PM25 Emissions, tonns"
-      ,main="Emissions in U.S. by Type")
+      ,xlab = "Year",ylab = "PM25 Emissions, tons"
+      ,main="PM25 Emissions in U.S. by Type")
 
 # === write to file === #
 dev.copy(png, file = "plot3.png",width=480,height=480)

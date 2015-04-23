@@ -12,8 +12,8 @@ aggr1$x <- aggr1$x/1000000
 
 # === plot ===#
 plot(aggr1$Group.1,aggr1$x,type="o",xlab = "Year",
-     ,ylab = "PM25 Emissions, 'Mln tonns"
-     ,main="Emissions in U.S.")
+     ,ylab = "PM25 Emissions, 'Mln tons"
+     ,main="Total PM25 Emissions in U.S.")
 
 # === write to file === #
 dev.copy(png, file = "plot1.png",width=480,height=480)

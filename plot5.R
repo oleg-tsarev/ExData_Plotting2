@@ -15,8 +15,8 @@ names(aggr5) <- c("Year","Emissions")
 
 # === plot ===#
 qplot(Year,Emissions,data=aggr5,geom=c("point","line")
-      ,xlab = "Year",ylab = "PM25 Emissions, tonns"
-      ,main="Emissions in Baltimore from Motor Vehicle Sources")
+      ,xlab = "Year",ylab = "PM25 Emissions, tons"
+      ,main="PM25 Emissions in Baltimore from Motor Vehicle Sources")
 
 # === write to file === #
 dev.copy(png, file = "plot5.png",width=480,height=480)

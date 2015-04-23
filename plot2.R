@@ -12,8 +12,8 @@ aggr2 <- aggregate(NEI$Emissions,by=list(NEI$year),FUN=sum,na.rm=T)
 
 # === plot ===#
 plot(aggr2$Group.1,aggr2$x,type="o",xlab = "Year",
-     ,ylab = "PM25 Emissions, tonns"
-     ,main="Emissions in Baltimore City")
+     ,ylab = "PM25 Emissions, tons"
+     ,main="Total PM25 Emissions in Baltimore City")
 
 # === write to file === #
 dev.copy(png, file = "plot2.png",width=480,height=480)
